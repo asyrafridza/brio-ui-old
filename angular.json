@@ -54,7 +54,8 @@
             "browserTarget": "brio-ui:build",
             "compodoc": true,
             "compodocArgs": ["-e", "json", "-d", "projects/brio-ui"],
-            "outputDir": "dist/storybook/brio-ui"
+            "outputDir": "dist/storybook/brio-ui",
+            "styles": ["projects/brio-ui/src/assets/themes/brio-green/theme.css"]
           }
         }
       }
