@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "storybook": "ng run brio-ui:storybook",
-    "build-static-webapp":"expo build:web"
+    "build-static-webapp":"ng run brio-ui:build-storybook"
   },
   "private": true,
   "dependencies": {
