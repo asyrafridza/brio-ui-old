@@ -1,0 +1,171 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "brio-ui": {
+      "projectType": "library",
+      "root": "projects/brio-ui",
+      "sourceRoot": "projects/brio-ui/src",
+      "prefix": "brio",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/brio-ui/tsconfig.lib.json",
+            "project": "projects/brio-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/brio-ui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/brio-ui/src/test.ts",
+            "tsConfig": "projects/brio-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/brio-ui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["projects/brio-ui/tsconfig.lib.json", "projects/brio-ui/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/brio-ui/.storybook",
+            "browserTarget": "brio-ui:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "projects/brio-ui"],
+            "port": 6006,
+            "styles": ["projects/brio-ui/src/assets/themes/brio-green/theme.css"]
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/brio-ui/.storybook",
+            "browserTarget": "brio-ui:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "projects/brio-ui"],
+            "outputDir": "dist/storybook/brio-ui"
+          }
+        }
+      }
+    },
+    "kitchen-sink": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/kitchen-sink",
+      "sourceRoot": "projects/kitchen-sink/src",
+      "prefix": "brio",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/kitchen-sink",
+            "index": "projects/kitchen-sink/src/index.html",
+            "main": "projects/kitchen-sink/src/main.ts",
+            "polyfills": "projects/kitchen-sink/src/polyfills.ts",
+            "tsConfig": "projects/kitchen-sink/tsconfig.app.json",
+            "aot": true,
+            "assets": ["projects/kitchen-sink/src/favicon.ico", "projects/kitchen-sink/src/assets"],
+            "styles": ["projects/kitchen-sink/src/styles.scss", "projects/brio-ui/src/assets/themes/brio-green/theme.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/kitchen-sink/src/environments/environment.ts",
+                  "with": "projects/kitchen-sink/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "kitchen-sink:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "kitchen-sink:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "kitchen-sink:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/kitchen-sink/src/test.ts",
+            "polyfills": "projects/kitchen-sink/src/polyfills.ts",
+            "tsConfig": "projects/kitchen-sink/tsconfig.spec.json",
+            "karmaConfig": "projects/kitchen-sink/karma.conf.js",
+            "assets": ["projects/kitchen-sink/src/favicon.ico", "projects/kitchen-sink/src/assets"],
+            "styles": ["projects/kitchen-sink/src/styles.scss"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/kitchen-sink/tsconfig.app.json",
+              "projects/kitchen-sink/tsconfig.spec.json",
+              "projects/kitchen-sink/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/kitchen-sink/e2e/protractor.conf.js",
+            "devServerTarget": "kitchen-sink:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "kitchen-sink:serve:production"
+            }
+          }
+        }
+      }
+    }
+  }
+}

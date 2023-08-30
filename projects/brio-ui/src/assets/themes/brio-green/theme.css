@@ -1,0 +1,102 @@
+:root {
+  /* WHITE */
+  --white: #ffffff;
+
+  /* CTA */
+  --tomato-light: #ff7056;
+  --tomato-medium: #ff6347;
+  --tomato-dark: #e95237;
+
+  /* BLACK */
+  --black-700: #2e4155;
+  --black-600: #506377;
+  --black-500: #7a8a9b;
+  --black-400: #b9c3cd;
+  --black-300: #dee2e6;
+  --black-200: #eceef2;
+  --black-100: #f5f6f8;
+
+  /* GREEN */
+  --green-700: #006653;
+  --green-600: #008e74;
+  --green-500: #02a284;
+  --green-400: #40bfa7;
+  --green-300: #81e7d4;
+  --green-200: #d2f5f0;
+  --green-100: #ecfbf9;
+
+  /* YELLOW */
+  --yellow-700: #b78100;
+  --yellow-600: #deac0e;
+  --yellow-500: #ffcd31;
+  --yellow-400: #fada76;
+  --yellow-300: #ffe9a6;
+  --yellow-200: #fef4d4;
+  --yellow-100: #fffaeb;
+
+  /* ORANGE */
+  --orange-700: #b33a00;
+  --orange-600: #cc561d;
+  --orange-500: #f28830;
+  --orange-400: #ffb77c;
+  --orange-300: #ffd3b0;
+  --orange-200: #ffe8d4;
+  --orange-100: #fff4ea;
+
+  /* PINK */
+  --pink-700: #b40676;
+  --pink-600: #d02e96;
+  --pink-500: #e751b1;
+  --pink-400: #fb9ad8;
+  --pink-300: #fdb7e4;
+  --pink-200: #fed8f0;
+  --pink-100: #fff1fa;
+
+  /* RED */
+  --red-700: #bf0025;
+  --red-600: #d12043;
+  --red-500: #e63a5c;
+  --red-400: #f87b92;
+  --red-300: #febfc6;
+  --red-200: #fbdfe5;
+  --red-100: #fff1f4;
+
+  /* PURPLE */
+  --purple-700: #3f40bf;
+  --purple-600: #5859c8;
+  --purple-500: #7374e7;
+  --purple-400: #a0a0f0;
+  --purple-300: #c9ccff;
+  --purple-200: #e5e7ff;
+  --purple-100: #f0f0fc;
+
+  /* BLUE */
+  --blue-700: #0049cc;
+  --blue-600: #116ecb;
+  --blue-500: #218cf4;
+  --blue-400: #6caff3;
+  --blue-300: #b3dbff;
+  --blue-200: #dbeeff;
+  --blue-100: #f1f8ff;
+
+  /* LIGHT BLUE */
+  --light-blue-700: #0069a0;
+  --light-blue-600: #0795d5;
+  --light-blue-500: #21b2f4;
+  --light-blue-400: #6ecdf8;
+  --light-blue-300: #a6e0ff;
+  --light-blue-200: #dcf4ff;
+  --light-blue-100: #f3fbff;
+}
+
+body > * {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--black-700);
+}
+
+button:hover:not(:disabled) {
+  cursor: pointer;
+}

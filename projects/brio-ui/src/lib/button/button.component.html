@@ -1,0 +1,15 @@
+<button
+  [attr.type]="type"
+  [attr.aria-label]="ariaLabel"
+  [class]="className"
+  [ngStyle]="customStyle"
+  [disabled]="disabled"
+  [ngClass]="buttonClass"
+  (click)="onClick.emit($event)"
+  (focus)="onFocus.emit($event)"
+  (blur)="onBlur.emit($event)"
+>
+  <fa-icon *ngIf="icon" [icon]="icon" [ngClass]="iconClass"></fa-icon>
+  <span *ngIf="label" [ngClass]="labelClass">{{ label }}</span>
+  <ng-content></ng-content>
+</button>

@@ -1,0 +1,46 @@
+<h1>BrioUI</h1>
+
+<h3>Button</h3>
+
+<div class="wrapper">
+  <div class="button-group">
+    <span style="flex: 0 0 60px"> Small </span>
+    <brio-button size="small" label="Button"></brio-button>
+    <brio-button color="primary" size="small" label="Button"></brio-button>
+    <brio-button color="emphasize" size="small" label="Button"></brio-button>
+    <brio-button color="critical" size="small" label="Button"></brio-button>
+    <brio-button style="margin-left: 48px" color="primary" [outline]="true" size="small" label="Button"></brio-button>
+    <brio-button color="emphasize" [outline]="true" size="small" label="Button"></brio-button>
+    <brio-button color="critical" [outline]="true" size="small" label="Button"></brio-button>
+  </div>
+
+  <div class="button-group">
+    <span style="flex: 0 0 60px"> Normal </span>
+    <brio-button label="Button"></brio-button>
+    <brio-button color="primary" label="Button"></brio-button>
+    <brio-button color="emphasize" label="Button"></brio-button>
+    <brio-button color="critical" label="Button"></brio-button>
+    <brio-button style="margin-left: 48px" color="primary" [outline]="true" label="Button"></brio-button>
+    <brio-button color="emphasize" [outline]="true" label="Button"></brio-button>
+    <brio-button color="critical" [outline]="true" label="Button"></brio-button>
+  </div>
+
+  <div class="button-group">
+    <span style="flex: 0 0 60px"> Disabled </span>
+    <brio-button [disabled]="true" label="Button"></brio-button>
+    <brio-button color="primary" [disabled]="true" label="Button"></brio-button>
+    <brio-button color="emphasize" [disabled]="true" label="Button"></brio-button>
+    <brio-button color="critical" [disabled]="true" label="Button"></brio-button>
+    <brio-button style="margin-left: 48px" color="primary" [outline]="true" [disabled]="true" label="Button"></brio-button>
+    <brio-button color="emphasize" [outline]="true" [disabled]="true" label="Button"></brio-button>
+    <brio-button color="critical" [outline]="true" [disabled]="true" label="Button"></brio-button>
+  </div>
+
+  <div class="button-group">
+    <span style="flex: 0 0 60px"> Icon </span>
+    <brio-button color="primary" [icon]="['fas', 'check']" label="Button"></brio-button>
+    <brio-button color="primary" [icon]="['fas', 'chevron-right']" iconPos="right" label="Button"></brio-button>
+    <brio-button color="primary" [icon]="['fas', 'calendar-alt']"> </brio-button>
+    <brio-button [icon]="['fas', 'eye']"> </brio-button>
+  </div>
+</div>

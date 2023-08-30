@@ -1,0 +1,680 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "User",
+            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
+            "file": "projects/brio-ui/src/stories/User.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        }
+    ],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-c17f691df9fee47e43c6fe70b3d637187308c1cc12d4842fa90792a2a5f420d9b940fdb9dad1ca93b6783e3cc03d2a700bfa38758977a12431146c5d3fcd34cc",
+            "file": "projects/brio-ui/src/lib/button/button.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "brio-button",
+            "styleUrls": [
+                "./button.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "className",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "\"primary\" | \"emphasize\" | \"critical\"",
+                    "decorators": []
+                },
+                {
+                    "name": "customStyle",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "ComponentStyle",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 43,
+                    "type": "IconProp",
+                    "decorators": []
+                },
+                {
+                    "name": "iconPos",
+                    "defaultValue": "'left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "ButtonIconPosition",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 45,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "outline",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'normal'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "ButtonSize",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "ButtonType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onBlur",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 51,
+                    "type": "EventEmitter<any>"
+                },
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 47,
+                    "type": "EventEmitter<any>"
+                },
+                {
+                    "name": "onFocus",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 49,
+                    "type": "EventEmitter<any>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';\nimport { IconProp } from '@fortawesome/fontawesome-svg-core';\n\ntype ButtonType = 'button' | 'submit' | 'reset';\n\ntype ButtonIconPosition = 'left' | 'right';\n\ntype ButtonSize = 'small' | 'normal';\n\ntype ComponentClass = {\n  [key: string]: boolean;\n};\n\ntype ComponentStyle = {\n  [key: string]: string;\n};\n\n@Component({\n  selector: 'brio-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.css'],\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class ButtonComponent {\n  @Input() public type: ButtonType = 'button';\n\n  @Input() public size: ButtonSize = 'normal';\n\n  @Input() public color: 'primary' | 'emphasize' | 'critical';\n\n  @Input() public outline: boolean = false;\n\n  @Input() public ariaLabel: string;\n\n  @Input() public className: string;\n\n  @Input() public customStyle: ComponentStyle;\n\n  @Input() public disabled: boolean;\n\n  @Input() public iconPos: ButtonIconPosition = 'left';\n\n  @Input() public icon: IconProp;\n\n  @Input() public label: string;\n\n  @Output() public onClick: EventEmitter<any> = new EventEmitter();\n\n  @Output() public onFocus: EventEmitter<any> = new EventEmitter();\n\n  @Output() public onBlur: EventEmitter<any> = new EventEmitter();\n\n  public get buttonClass(): ComponentClass {\n    return {\n      'b-button': true,\n      'b-button-outline': this.outline,\n      'b-button-icon--right': this.iconPos === 'right',\n      'b-button--small': this.size === 'small',\n      'b-button--primary': this.color === 'primary',\n      'b-button--emphasize': this.color === 'emphasize',\n      'b-button--critical': this.color === 'critical'\n    };\n  }\n\n  public get iconClass(): ComponentClass {\n    return {\n      'b-button-icon': true,\n      'b-button-icon--right': this.iconPos === 'right'\n    };\n  }\n\n  public get labelClass(): ComponentClass {\n    return {\n      'b-button-label': true\n    };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  display: inline-block;\n}\n\n.b-button {\n  display: inline-flex;\n  align-items: center;\n  position: relative;\n  width: 100%;\n  padding: 8px 12px;\n  gap: 8px;\n  border-radius: 6px;\n  border: 1px solid var(--black-300);\n  background-color: var(--black-300);\n  color: var(--black-600);\n}\n\n.b-button:hover:not(:disabled) {\n  background-color: var(--black-400);\n}\n\n.b-button:disabled {\n  opacity: 0.4;\n  cursor: not-allowed;\n}\n\n.b-button.b-button--small {\n  padding: 4px 12px;\n}\n\n.b-button-icon--right {\n  order: 1;\n}\n\n/* Button solid */\n.b-button--primary {\n  background-color: var(--green-500);\n  color: var(--white);\n  border: 1px solid var(--green-500);\n}\n\n.b-button--primary:hover:not(:disabled) {\n  background-color: var(--green-600);\n}\n\n.b-button--emphasize {\n  background-color: var(--tomato-light);\n  color: var(--white);\n  border: 1px solid var(--tomato-light);\n}\n\n.b-button--emphasize:hover:not(:disabled) {\n  background-color: var(--tomato-dark);\n}\n\n.b-button--critical {\n  background-color: var(--red-500);\n  color: var(--white);\n  border: 1px solid var(--red-500);\n}\n\n.b-button--critical:hover:not(:disabled) {\n  background-color: var(--red-600);\n}\n\n/* Button outline */\n.b-button-outline {\n  background-color: var(--white);\n}\n\n.b-button--primary.b-button-outline {\n  color: var(--green-600);\n  border: 1px solid var(--green-600);\n}\n\n.b-button--primary.b-button-outline:hover:not(:disabled) {\n  background-color: var(--green-200);\n  color: var(--green-600);\n}\n\n.b-button--emphasize.b-button-outline {\n  color: var(--tomato-dark);\n  border: 1px solid var(--tomato-dark);\n}\n\n.b-button--emphasize.b-button-outline:hover:not(:disabled) {\n  background-color: var(--orange-200);\n  color: var(--tomato-dark);\n}\n\n.b-button--critical.b-button-outline {\n  color: var(--red-500);\n  border: 1px solid var(--red-500);\n}\n\n.b-button--critical.b-button-outline:hover:not(:disabled) {\n  background-color: var(--red-200);\n  color: var(--red-500);\n}\n",
+                    "styleUrl": "./button.component.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "buttonClass": {
+                    "name": "buttonClass",
+                    "getSignature": {
+                        "name": "buttonClass",
+                        "type": "",
+                        "returnType": "ComponentClass",
+                        "line": 53
+                    }
+                },
+                "iconClass": {
+                    "name": "iconClass",
+                    "getSignature": {
+                        "name": "iconClass",
+                        "type": "",
+                        "returnType": "ComponentClass",
+                        "line": 65
+                    }
+                },
+                "labelClass": {
+                    "name": "labelClass",
+                    "getSignature": {
+                        "name": "labelClass",
+                        "type": "",
+                        "returnType": "ComponentClass",
+                        "line": 72
+                    }
+                }
+            },
+            "templateData": "<button\n  [attr.type]=\"type\"\n  [attr.aria-label]=\"ariaLabel\"\n  [class]=\"className\"\n  [ngStyle]=\"customStyle\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"buttonClass\"\n  (click)=\"onClick.emit($event)\"\n  (focus)=\"onFocus.emit($event)\"\n  (blur)=\"onBlur.emit($event)\"\n>\n  <fa-icon *ngIf=\"icon\" [icon]=\"icon\" [ngClass]=\"iconClass\"></fa-icon>\n  <span *ngIf=\"label\" [ngClass]=\"labelClass\">{{ label }}</span>\n  <ng-content></ng-content>\n</button>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "ButtonModule",
+            "id": "module-ButtonModule-4ddfd62e573c4fcfade57dd94806e49f7ed721252d9c6fefa22885840a576bf5f82d6d2b0bf25e9de7c2d13274e6776922d20a50352c774ff5a54b529e35fb82",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/brio-ui/src/lib/button/button.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { far } from '@fortawesome/free-regular-svg-icons';\nimport { fas } from '@fortawesome/free-solid-svg-icons';\nimport { ButtonComponent } from './button.component';\n\n@NgModule({\n  declarations: [ButtonComponent],\n  imports: [CommonModule, FontAwesomeModule],\n  exports: [ButtonComponent],\n})\nexport class ButtonModule {\n  constructor(library: FaIconLibrary) {\n    library.addIconPacks(far, fas);\n  }\n}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Critical",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    color: 'critical',\n    label: 'Button'\n  }\n}"
+            },
+            {
+                "name": "CriticalOutline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    color: 'critical',\n    outline: true,\n    label: 'Button'\n  }\n}"
+            },
+            {
+                "name": "Emphasize",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    color: 'emphasize',\n    label: 'Button'\n  }\n}"
+            },
+            {
+                "name": "EmphasizeOutline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    color: 'emphasize',\n    outline: true,\n    label: 'Button'\n  }\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonModule]\n    })\n  ],\n  render: (args: ButtonComponent) => ({\n    props: {\n      label: 'Button',\n      ...args\n    }\n  })\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/brio-ui/.storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/\n      }\n    }\n  }\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    color: 'primary',\n    label: 'Button'\n  }\n}"
+            },
+            {
+                "name": "PrimaryOutline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    color: 'primary',\n    outline: true,\n    label: 'Button'\n  }\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "ButtonIconPosition",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"left\" | \"right\"",
+                "file": "projects/brio-ui/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 189
+            },
+            {
+                "name": "ButtonSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"small\" | \"normal\"",
+                "file": "projects/brio-ui/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 189
+            },
+            {
+                "name": "ButtonType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"button\" | \"submit\" | \"reset\"",
+                "file": "projects/brio-ui/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 189
+            },
+            {
+                "name": "ComponentClass",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "literal type",
+                "file": "projects/brio-ui/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "ComponentStyle",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "literal type",
+                "file": "projects/brio-ui/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/brio-ui/src/stories/Button.stories.ts": [
+                {
+                    "name": "Critical",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    color: 'critical',\n    label: 'Button'\n  }\n}"
+                },
+                {
+                    "name": "CriticalOutline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    color: 'critical',\n    outline: true,\n    label: 'Button'\n  }\n}"
+                },
+                {
+                    "name": "Emphasize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    color: 'emphasize',\n    label: 'Button'\n  }\n}"
+                },
+                {
+                    "name": "EmphasizeOutline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    color: 'emphasize',\n    outline: true,\n    label: 'Button'\n  }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonModule]\n    })\n  ],\n  render: (args: ButtonComponent) => ({\n    props: {\n      label: 'Button',\n      ...args\n    }\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    color: 'primary',\n    label: 'Button'\n  }\n}"
+                },
+                {
+                    "name": "PrimaryOutline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    color: 'primary',\n    outline: true,\n    label: 'Button'\n  }\n}"
+                }
+            ],
+            "projects/brio-ui/.storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/brio-ui/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/\n      }\n    }\n  }\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/brio-ui/src/lib/button/button.component.ts": [
+                {
+                    "name": "ButtonIconPosition",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"left\" | \"right\"",
+                    "file": "projects/brio-ui/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 189
+                },
+                {
+                    "name": "ButtonSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"small\" | \"normal\"",
+                    "file": "projects/brio-ui/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 189
+                },
+                {
+                    "name": "ButtonType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"button\" | \"submit\" | \"reset\"",
+                    "file": "projects/brio-ui/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 189
+                },
+                {
+                    "name": "ComponentClass",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "literal type",
+                    "file": "projects/brio-ui/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                },
+                {
+                    "name": "ComponentStyle",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "literal type",
+                    "file": "projects/brio-ui/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "projects/brio-ui/src/stories/Button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/brio-ui/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/brio-ui/.storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/brio-ui/src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/brio-ui/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Critical",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/brio-ui/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CriticalOutline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/brio-ui/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Emphasize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/brio-ui/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "EmphasizeOutline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/brio-ui/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/brio-ui/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/brio-ui/src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryOutline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/brio-ui/src/stories/User.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

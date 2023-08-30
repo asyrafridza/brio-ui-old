@@ -1,0 +1,99 @@
+:host {
+  display: inline-block;
+}
+
+.b-button {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 8px 12px;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--black-300);
+  background-color: var(--black-300);
+  color: var(--black-600);
+}
+
+.b-button:hover:not(:disabled) {
+  background-color: var(--black-400);
+}
+
+.b-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.b-button.b-button--small {
+  padding: 4px 12px;
+}
+
+.b-button-icon--right {
+  order: 1;
+}
+
+/* Button solid */
+.b-button--primary {
+  background-color: var(--green-500);
+  color: var(--white);
+  border: 1px solid var(--green-500);
+}
+
+.b-button--primary:hover:not(:disabled) {
+  background-color: var(--green-600);
+}
+
+.b-button--emphasize {
+  background-color: var(--tomato-light);
+  color: var(--white);
+  border: 1px solid var(--tomato-light);
+}
+
+.b-button--emphasize:hover:not(:disabled) {
+  background-color: var(--tomato-dark);
+}
+
+.b-button--critical {
+  background-color: var(--red-500);
+  color: var(--white);
+  border: 1px solid var(--red-500);
+}
+
+.b-button--critical:hover:not(:disabled) {
+  background-color: var(--red-600);
+}
+
+/* Button outline */
+.b-button-outline {
+  background-color: var(--white);
+}
+
+.b-button--primary.b-button-outline {
+  color: var(--green-600);
+  border: 1px solid var(--green-600);
+}
+
+.b-button--primary.b-button-outline:hover:not(:disabled) {
+  background-color: var(--green-200);
+  color: var(--green-600);
+}
+
+.b-button--emphasize.b-button-outline {
+  color: var(--tomato-dark);
+  border: 1px solid var(--tomato-dark);
+}
+
+.b-button--emphasize.b-button-outline:hover:not(:disabled) {
+  background-color: var(--orange-200);
+  color: var(--tomato-dark);
+}
+
+.b-button--critical.b-button-outline {
+  color: var(--red-500);
+  border: 1px solid var(--red-500);
+}
+
+.b-button--critical.b-button-outline:hover:not(:disabled) {
+  background-color: var(--red-200);
+  color: var(--red-500);
+}
